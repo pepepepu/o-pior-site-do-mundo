@@ -4,7 +4,8 @@ export const animateSlideEntry = (container: HTMLElement | null) => {
   if (!container) return;
 
   const elements = container.querySelectorAll('[data-animate]');
-  
+  if (!elements.length) return;
+
   gsap.fromTo(
     elements,
     {
@@ -23,12 +24,28 @@ export const animateSlideEntry = (container: HTMLElement | null) => {
   );
 };
 
-export const animateModeSwitch = (element: HTMLElement | null) => {
+export const animate3DSpinningText = (element: HTMLElement | null) => {
   if (!element) return;
 
-  gsap.fromTo(
-    element,
-    { scale: 0.96, opacity: 0.5 },
-    { scale: 1, opacity: 1, duration: 0.45, ease: 'back.out(1.7)' }
-  );
+  gsap.set(element, {
+    transformPerspective: 900,
+    transformStyle: 'preserve-3d',
+  });
+
+  gsap.to(element, {
+    rotationY: 0,
+    rotationX: 0,
+    duration: 6,
+    repeat: -1,
+    ease: 'none',
+  });
+
+  gsap.to(element, {
+    scale: 1.15,
+    rotationZ: 12,
+    duration: 1.2,
+    repeat: -1,
+    yoyo: true,
+    ease: 'sine.inOut',
+  });
 };

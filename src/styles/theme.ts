@@ -24,7 +24,7 @@ export const theme = {
     sans: "'Plus Jakarta Sans', sans-serif",
     serif: "'Instrument Serif', serif",
     mono: "'JetBrains Mono', monospace",
-    chaotic: "'Comic Neue', cursive",
+    chaotic: "'Comic Sans MS', 'Comic Sans', 'Comic Neue', cursive",
   },
 } as const;
 

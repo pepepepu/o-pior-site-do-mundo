@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { IntroSlide } from '../pages/introSlide';
+import { IntroSlide } from '../pages/IntroSlide';
 
 export const router = createBrowserRouter([
   {
